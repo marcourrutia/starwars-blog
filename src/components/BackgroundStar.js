@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const BackgroundStar = () => {
+const BackgroundStar = (props) => {
   useEffect(() => {
     // GLOBALS
     const STAR_COLOR = "#fff";
@@ -203,12 +203,7 @@ const BackgroundStar = () => {
     };
   }, []);
 
-  return (
-    <canvas
-      className="star-background"
-      style={{ width: "100%", height: "100%" }}
-    />
-  );
+  return <canvas className="star-background" />;
 };
 
 export default BackgroundStar;
