@@ -1,0 +1,42 @@
+#btn-fav {
+  margin-left: auto;
+  color: #ffee58;
+  border: 1px solid #ffee58;
+  transition: 0.3s;
+  font-family: "jedi-subtitle";
+  font-size: 0.75em;
+  letter-spacing: 0.5em;
+  padding-right: 5px;
+  height: 35px;
+}
+
+#btn-fav:hover {
+  background-color: #aa9b168e;
+  color: #fff495;
+}
+
+#offcanvasScrolling {
+  background-color: black;
+  color: white;
+  width: 300px;
+}
+
+.btn-close {
+  background-color: white;
+}
+
+.offcanvas-title {
+  font-family: "jedi-outline";
+  font-size: 1.5em;
+}
+
+.fav-category-span {
+  font-family: "jedi";
+  letter-spacing: 0.15em;
+}
+
+.fav-list {
+  margin: 0;
+  list-style-type: none;
+  padding-left: 1em;
+}

@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "jedi";
+  src: url("./Starjedi.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "jedi-outline";
+  src: url("./Starjhol.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "jedi-subtitle";
+  src: url("./TypoGroteskDemo.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "biko";
+  src: url("./Biko_Regular.otf") format("opentype");
+}

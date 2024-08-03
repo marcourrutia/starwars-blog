@@ -1,0 +1,25 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+}
+
+.title-400 {
+  font-family: "jedi-outline";
+  font-size: 4em;
+  color: #ffee58;
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-family: "jedi-subtitle";
+  font-size: 0.75em;
+  margin-top: -1em;
+  margin-bottom: -2em;
+  letter-spacing: 0.7em;
+}

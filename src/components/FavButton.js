@@ -1,27 +1,31 @@
-export const FavButton = () => {
+import "../styles/FavButton.css";
+
+export const FavButton = (props) => {
   return (
     <>
       <button
-        className="btn btn-outline-light"
+        className="btn btn-outline-warning"
         type="button"
         data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample"
+        data-bs-target="#offcanvasScrolling"
+        aria-controls="offcanvasScrolling"
         id="btn-fav"
       >
-        Favoritos
+        FAVORITES
       </button>
 
       <div
-        className="offcanvas offcanvas-start"
+        className="offcanvas offcanvas-end"
+        data-bs-scroll="true"
+        data-bs-backdrop="false"
         tabindex="-1"
-        id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel"
+        id="offcanvasScrolling"
+        aria-labelledby="offcanvasScrollingLabel"
       >
         <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasExampleLabel">
-            Offcanvas
-          </h5>
+          <h6 className="offcanvas-title" id="offcanvasScrollingLabel">
+            favorites list
+          </h6>
           <button
             type="button"
             className="btn-close"
@@ -30,35 +34,19 @@ export const FavButton = () => {
           ></button>
         </div>
         <div className="offcanvas-body">
-          <div>
-            Some text as placeholder. In real life you can have the elements you
-            have chosen. Like, text, images, lists, etc.
-          </div>
-          <div className="dropdown mt-3">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-            >
-              Dropdown button
-            </button>
-            <ul className="dropdown-menu">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Another action
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
+          <div className="fav-characters">
+            <span className="fav-category-span">characters</span>
+            <ul className="fav-list">
+              <li className="fav-list-item">a</li>
+              <li className="fav-list-item">a</li>
+              <li className="fav-list-item">a</li>
             </ul>
+          </div>
+          <div className="fav-vehicles">
+            <span className="fav-category-span">vehicles</span>
+          </div>
+          <div className="fav-planets">
+            <span className="fav-category-span">planets</span>
           </div>
         </div>
       </div>
