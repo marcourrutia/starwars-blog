@@ -1,0 +1,10 @@
+.start-btn-container {
+  height: 100%;
+  display: grid;
+  place-content: center;
+}
+
+.start-btn:hover {
+  position: relative;
+  cursor: pointer;
+}

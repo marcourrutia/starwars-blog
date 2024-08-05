@@ -1,0 +1,16 @@
+.btn-music {
+  position: fixed;
+  left: 1em;
+  top: 1em;
+  color: #ffee58;
+  border: 1px solid #ffee58;
+  transition: 0.2s;
+  font-size: 1em;
+  letter-spacing: 0.5em;
+  height: 35px;
+}
+
+.btn-music:hover {
+  background-color: #aa9b168e;
+  color: #fff495;
+}

@@ -20,6 +20,8 @@ body {
 }
 
 #btn-fav,
-.card-container {
+.card-container,
+.btn-music,
+.start-btn {
   z-index: 20;
 }
