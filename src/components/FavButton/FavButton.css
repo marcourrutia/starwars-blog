@@ -1,8 +1,10 @@
 #btn-fav {
+  position: relative;
   margin-left: auto;
+  margin-bottom: auto;
   color: #ffee58;
   border: 1px solid #ffee58;
-  transition: 0.3s;
+  transition: 0.2s;
   font-family: "jedi-subtitle";
   font-size: 0.75em;
   letter-spacing: 0.5em;

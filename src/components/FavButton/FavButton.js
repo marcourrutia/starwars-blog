@@ -1,4 +1,4 @@
-import "../styles/FavButton.css";
+import "./FavButton.css";
 
 export const FavButton = (props) => {
   return (

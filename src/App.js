@@ -1,8 +1,7 @@
 import "./App.css";
-import "./styles/NavBar.css";
-import BackgroundStar from "./components/BackgroundStar";
-import { FavButton } from "./components/FavButton";
-import { Title } from "./components/Title";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BackgroundStar, FavButton, Title } from "./components";
+import { Home } from "./views";
 
 function App() {
   return (
@@ -12,7 +11,13 @@ function App() {
         <Title />
         <FavButton />
       </div>
-      <div className="main-container"></div>
+      <div className="main-container">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </div>
   );
 }
