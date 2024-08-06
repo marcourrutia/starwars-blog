@@ -20,4 +20,10 @@
   padding: 2rem 5rem;
   justify-content: space-between;
   gap: 1em;
+  opacity: 0;
+  transition: 3s ease-in;
+}
+
+.main-container.visible {
+  opacity: 1;
 }

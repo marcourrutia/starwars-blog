@@ -1,9 +1,9 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import "./BackgroundMusic.css";
 import { MdMusicNote, MdMusicOff } from "react-icons/md";
 
 export const BackgroundMusic = (props) => {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef(null);
 
   const togglePlay = () => {
@@ -15,18 +15,9 @@ export const BackgroundMusic = (props) => {
     setIsPlaying(!isPlaying);
   };
 
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (audio) {
-      audio.play().catch((error) => {
-        console.log("Autoplay was prevented:", error);
-      });
-    }
-  }, []);
-
   return (
     <>
-      <audio ref={audioRef} autoPlay loop>
+      <audio ref={audioRef} autoPlay>
         <source src={props.music} type="audio/mp3" />
       </audio>
       <button

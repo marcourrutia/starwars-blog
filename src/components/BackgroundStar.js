@@ -20,7 +20,13 @@ const BackgroundStar = (props) => {
     let stars = [];
     let pointerX = null;
     let pointerY = null;
-    let velocity = { x: 0, y: 0, tx: 0, ty: 0, z: 0.0004 };
+    let velocity = {
+      x: 0,
+      y: 0,
+      tx: 0,
+      ty: 0,
+      z: props.Zvelocity,
+    }; /* 0.0004 */
     let touchInput = false;
 
     // Functions
@@ -201,7 +207,7 @@ const BackgroundStar = (props) => {
       canvas.ontouchend = null;
       document.onmouseleave = null;
     };
-  }, []);
+  }, [props.Zvelocity]);
 
   return <canvas className="star-background" />;
 };
