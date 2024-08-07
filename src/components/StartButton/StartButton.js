@@ -18,17 +18,11 @@ export const StartButton = (props) => {
   };
 
   function handleClick() {
-    props.setVelocity(0.04);
-    setTimeout(() => {
-      props.setVelocity(0.0004);
-    }, 1000);
+    props.setHyper(true);
+    props.setMouse(false);
     stop();
     hit();
-    if (props.value) {
-      setTimeout(() => {
-        props.setValue(!props.value);
-      }, 400);
-    }
+    props.setStartPage(false);
   }
 
   return (

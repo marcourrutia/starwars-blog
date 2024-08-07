@@ -1,0 +1,28 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100vw; /* Ocupa todo el viewport */
+  height: 100vh; /* Ocupa todo el viewport */
+  overflow: hidden; /* Asegura que el contenido que se extiende fuera del contenedor no se muestre */
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background-color: black; /* Color negro con transparencia */
+  transform: translate(-50%, -50%);
+  animation: expand 2s forwards;
+}
+
+@keyframes expand {
+  to {
+    width: 200vw; /* Cambia a 100vw para cubrir el ancho completo del viewport */
+    height: 200vw; /* Usa 100vw para asegurar que el círculo se mantenga redondo */
+  }
+}

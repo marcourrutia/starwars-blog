@@ -16,12 +16,22 @@ body {
 
 .star-background {
   position: fixed;
+  z-index: 20;
+}
+
+.hyper-space {
+  position: fixed;
   z-index: 10;
+}
+
+.circle {
+  z-index: 15;
 }
 
 #btn-fav,
 .card-container,
 .btn-music,
-.start-btn {
-  z-index: 20;
+.start-btn,
+.title-container {
+  z-index: 30;
 }

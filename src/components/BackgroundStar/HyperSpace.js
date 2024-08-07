@@ -1,6 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const BackgroundStar = (props) => {
+const HyperSpace = () => {
+  const [animationId, setAnimationId] = useState(null);
+
   useEffect(() => {
     // GLOBALS
     const STAR_COLOR = "#fff";
@@ -10,7 +12,7 @@ const BackgroundStar = (props) => {
     const STAR_COUNT = (window.innerWidth + window.innerHeight) / 8;
 
     // setup canvas
-    const canvas = document.querySelector("canvas");
+    const canvas = document.querySelector("#canvas-2");
     const context = canvas.getContext("2d");
 
     // aux variables
@@ -25,11 +27,39 @@ const BackgroundStar = (props) => {
       y: 0,
       tx: 0,
       ty: 0,
-      z: props.Zvelocity,
+      z: 0.0004,
     }; /* 0.0004 */
-    let touchInput = false;
-
     // Functions
+    setTimeout(() => {
+      reduceVelocity();
+    }, 3000);
+    function upVelocity() {
+      if (velocity.z < 0.01) {
+        velocity.z += (0.01 + 0.0004) / 100;
+        console.log("hola up");
+        requestAnimationFrame(upVelocity);
+      }
+    }
+
+    function reduceVelocity() {
+      if (velocity.z > 0.0004) {
+        velocity.z -= (0.01 - 0.0004) / 100;
+        console.log("hola reduce");
+        requestAnimationFrame(reduceVelocity);
+      } else if (velocity.z < 0.0004) {
+        velocity.z = 0.0004;
+        console.log("reduce menor que 0");
+      }
+    }
+
+    function stopAnimation() {
+      if (animationId) {
+        console.log("hola stop");
+        cancelAnimationFrame(animationId);
+        setAnimationId(null);
+      }
+    }
+
     function generate() {
       stars = Array.from({ length: STAR_COUNT }, () => ({
         x: 0,
@@ -91,7 +121,6 @@ const BackgroundStar = (props) => {
     }
 
     function step() {
-      context.clearRect(0, 0, width, height);
       update();
       render();
       requestAnimationFrame(step);
@@ -147,57 +176,13 @@ const BackgroundStar = (props) => {
       });
     }
 
-    function movePointer(x, y) {
-      if (pointerX === null || pointerY === null) {
-        pointerX = x;
-        pointerY = y;
-        return;
-      }
-      let ox = x - pointerX;
-      let oy = y - pointerY;
-      velocity.tx = velocity.tx + (ox / 8) * scale * (touchInput ? 1 : -1);
-      velocity.ty = velocity.ty + (oy / 8) * scale * (touchInput ? 1 : -1);
-      pointerX = x;
-      pointerY = y;
-    }
-
-    // handlers
-    function onMouseMove(event) {
-      touchInput = false;
-      movePointer(event.clientX, event.clientY);
-    }
-
-    function onTouchMove(event) {
-      event.preventDefault();
-      touchInput = true;
-      movePointer(event.touches[0].clientX, event.touches[0].clientY);
-    }
-
-    function onMouseLeave() {
-      pointerX = null;
-      pointerY = null;
-    }
-
     // listeners
-    generate();
+    setTimeout(() => {
+      upVelocity();
+    }, 600);
     resize();
-    step();
-
-    window.onresize = resize;
-    canvas.onmousemove = onMouseMove;
-    canvas.ontouchmove = onTouchMove;
-    canvas.ontouchend = onMouseLeave;
-    canvas.onmouseleave = onMouseLeave;
-
     generate();
-    resize();
     step();
-
-    window.onresize = resize;
-    canvas.onmousemove = onMouseMove;
-    canvas.ontouchmove = onTouchMove;
-    canvas.ontouchend = onMouseLeave;
-    document.onmouseleave = onMouseLeave;
 
     // Limpiar cuando el componente se desmonte
     return () => {
@@ -205,11 +190,10 @@ const BackgroundStar = (props) => {
       canvas.onmousemove = null;
       canvas.ontouchmove = null;
       canvas.ontouchend = null;
-      document.onmouseleave = null;
+      canvas.onmouseleave = null;
     };
-  }, [props.Zvelocity]);
+  }, []);
 
-  return <canvas className="star-background" />;
+  return <canvas className="hyper-space" id="canvas-2" />;
 };
-
-export default BackgroundStar;
+export default HyperSpace;

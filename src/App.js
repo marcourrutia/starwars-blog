@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {
   LightsaberActive,
@@ -11,52 +11,71 @@ import {
 import {
   BackgroundMusic,
   BackgroundStar,
+  HyperSpace,
   FavButton,
   StartButton,
   Title,
+  CircleAnimation,
 } from "./components";
 import { Home } from "./views";
 
 function App() {
   const [startPage, setStartPage] = useState(true);
   const [visible, setVisible] = useState(false);
-  const [starVelocity, setStarVelocity] = useState(0.0004);
+  const [hyperSpace, setHyperSpace] = useState(false);
+  const [circleClean, setCircleCLean] = useState(false);
+  const [mouse, setMouse] = useState(true);
+
+  useEffect(() => {
+    if (hyperSpace) {
+      const timer = setTimeout(() => {
+        setCircleCLean(true);
+      }, 2500);
+      const timer2 = setTimeout(() => {
+        setVisible(true);
+      }, 3000);
+      return () => clearTimeout(timer, timer2);
+    }
+  }, [hyperSpace]);
 
   return (
     <div className="App">
-      <BackgroundStar Zvelocity={starVelocity} />
-      {startPage ? (
+      <BackgroundStar
+        hyper={hyperSpace}
+        setHyper={setHyperSpace}
+        mouse={mouse}
+        setMouse={setMouse}
+      />
+      {hyperSpace && <HyperSpace />}
+      {circleClean && <CircleAnimation />}
+      {startPage && (
         <StartButton
-          value={startPage}
-          setValue={setStartPage}
-          setVelocity={setStarVelocity}
+          setStartPage={setStartPage}
+          setHyper={setHyperSpace}
+          setMouse={setMouse}
           lSOn={LightsaberOn}
           lSOff={LightsaberOff}
           lSActive={LightsaberActive}
           lSHit={lightsaberHit}
         />
-      ) : (
-        (setTimeout(() => {
-          setVisible(true);
-        }, 3000),
-        (
-          <>
-            <BackgroundMusic music={starwarsintro} />
-            <div className="nav-container">
-              <Title />
-              <FavButton />
-            </div>
-            <div className={`main-container ${visible ? "visible" : ""}`}>
-              <BrowserRouter>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                </Routes>
-              </BrowserRouter>
-            </div>
-          </>
-        ))
       )}
-      ;
+      {visible && (
+        <>
+          <BackgroundMusic music={starwarsintro} />
+          <div className="nav-container">
+            <Title />
+            <FavButton />
+          </div>
+          <div className={`main-container ${visible ? "visible" : ""}`}>
+            <BrowserRouter>
+              <Routes>
+                <Route path="/" element={<Home />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
+        </>
+      )}
+      );
     </div>
   );
 }
