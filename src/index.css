@@ -10,28 +10,24 @@
 
 body {
   position: relative;
-  z-index: -30;
   background-color: black;
 }
 
 .star-background {
   position: fixed;
-  z-index: 20;
+  z-index: 1;
 }
 
 .hyper-space {
   position: fixed;
-  z-index: 10;
 }
 
-.circle {
-  z-index: 15;
+.start-btn {
+  z-index: 1;
 }
 
 #btn-fav,
-.card-container,
 .btn-music,
-.start-btn,
-.title-container {
-  z-index: 30;
+.card-container {
+  z-index: 2;
 }

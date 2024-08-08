@@ -6,3 +6,4 @@ export { Title } from "./Title/Title";
 export { Card } from "./Card/Card";
 export { BackgroundMusic } from "./BackgroundMusic/BackgroundMusic";
 export { StartButton } from "./StartButton/StartButton";
+export { StartWarning } from "./StartWarning/StartWarning";

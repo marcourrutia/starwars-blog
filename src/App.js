@@ -16,6 +16,7 @@ import {
   StartButton,
   Title,
   CircleAnimation,
+  StartWarning,
 } from "./components";
 import { Home } from "./views";
 
@@ -25,29 +26,31 @@ function App() {
   const [hyperSpace, setHyperSpace] = useState(false);
   const [circleClean, setCircleCLean] = useState(false);
   const [mouse, setMouse] = useState(true);
+  const [warning, setWarning] = useState(true);
 
   useEffect(() => {
     if (hyperSpace) {
       const timer = setTimeout(() => {
         setCircleCLean(true);
-      }, 2500);
+      }, 3000);
       const timer2 = setTimeout(() => {
         setVisible(true);
-      }, 3000);
+      }, 2000);
       return () => clearTimeout(timer, timer2);
     }
   }, [hyperSpace]);
 
   return (
     <div className="App">
+      {warning && <StartWarning setWarning={setWarning} />}
+      {hyperSpace && <HyperSpace />}
+      {circleClean && <CircleAnimation setCircleClean={setCircleCLean} />}
       <BackgroundStar
         hyper={hyperSpace}
         setHyper={setHyperSpace}
         mouse={mouse}
         setMouse={setMouse}
       />
-      {hyperSpace && <HyperSpace />}
-      {circleClean && <CircleAnimation />}
       {startPage && (
         <StartButton
           setStartPage={setStartPage}
@@ -59,23 +62,26 @@ function App() {
           lSHit={lightsaberHit}
         />
       )}
-      {visible && (
-        <>
-          <BackgroundMusic music={starwarsintro} />
-          <div className="nav-container">
-            <Title />
-            <FavButton />
-          </div>
-          <div className={`main-container ${visible ? "visible" : ""}`}>
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Home />} />
-              </Routes>
-            </BrowserRouter>
-          </div>
-        </>
-      )}
-      );
+      {!startPage &&
+        (setTimeout(() => {
+          setVisible(true);
+        }, 3000),
+        (
+          <>
+            <BackgroundMusic music={starwarsintro} />
+            <div className="nav-container">
+              <Title />
+              <FavButton />
+            </div>
+            <div className={`main-container ${visible ? "visible" : ""}`}>
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                </Routes>
+              </BrowserRouter>
+            </div>
+          </>
+        ))}
     </div>
   );
 }

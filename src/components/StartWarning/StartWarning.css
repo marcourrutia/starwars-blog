@@ -1,0 +1,63 @@
+.start-warning-container {
+  position: fixed;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 35em;
+  align-items: center;
+  background-color: rgb(44, 47, 87);
+  border: 2px solid rgb(185, 185, 248);
+  border-radius: 1.5em;
+  padding: 1em 2em;
+}
+
+.start-warning-span-language {
+  transition: 0.2s;
+  font-size: 2.5em;
+  align-self: flex-end;
+  color: #ffffffb2;
+  display: flex;
+  height: 0.7em;
+  align-items: center;
+  transition: 0.3s;
+  border: none;
+}
+
+.start-warning-span-language:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  color: white;
+}
+
+.start-warning-span-language:active {
+  transition: transform 0.1s;
+  transform: scale(1);
+}
+
+.start-warning-h2 {
+  font-family: "jedi-outline";
+  color: #ffffffb2;
+  text-shadow: 0 0 5px #fff;
+}
+
+.start-warning-p {
+  color: #ffffffb2;
+  font-family: "jedi-subtitle";
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.start-warning-span {
+  font-family: "jedi-outline";
+  color: #ffee58;
+  text-shadow: 0 0 5px #eff786;
+  font-size: 1.2em;
+}
+
+.start-warning-span:hover {
+  cursor: default;
+}

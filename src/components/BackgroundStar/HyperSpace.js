@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const HyperSpace = () => {
-  const [animationId, setAnimationId] = useState(null);
-
   useEffect(() => {
     // GLOBALS
     const STAR_COLOR = "#fff";
@@ -20,43 +18,18 @@ const HyperSpace = () => {
     let width;
     let height;
     let stars = [];
-    let pointerX = null;
-    let pointerY = null;
     let velocity = {
       x: 0,
       y: 0,
       tx: 0,
       ty: 0,
-      z: 0.0004,
+      z: 0.003,
     }; /* 0.0004 */
     // Functions
-    setTimeout(() => {
-      reduceVelocity();
-    }, 3000);
     function upVelocity() {
       if (velocity.z < 0.01) {
-        velocity.z += (0.01 + 0.0004) / 100;
-        console.log("hola up");
+        velocity.z += (0.01 + 0.003) / 100;
         requestAnimationFrame(upVelocity);
-      }
-    }
-
-    function reduceVelocity() {
-      if (velocity.z > 0.0004) {
-        velocity.z -= (0.01 - 0.0004) / 100;
-        console.log("hola reduce");
-        requestAnimationFrame(reduceVelocity);
-      } else if (velocity.z < 0.0004) {
-        velocity.z = 0.0004;
-        console.log("reduce menor que 0");
-      }
-    }
-
-    function stopAnimation() {
-      if (animationId) {
-        console.log("hola stop");
-        cancelAnimationFrame(animationId);
-        setAnimationId(null);
       }
     }
 
@@ -179,7 +152,7 @@ const HyperSpace = () => {
     // listeners
     setTimeout(() => {
       upVelocity();
-    }, 600);
+    }, 800);
     resize();
     generate();
     step();

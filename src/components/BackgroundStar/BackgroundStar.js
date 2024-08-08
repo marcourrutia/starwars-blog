@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
 
 const BackgroundStar = (props) => {
   useEffect(() => {
@@ -33,7 +33,7 @@ const BackgroundStar = (props) => {
       velocity.z = 0.004;
       setTimeout(() => {
         upVelocity();
-      }, 1000);
+      }, 500);
       setTimeout(() => {
         props.setHyper(false);
         props.setMouse(true);
@@ -48,20 +48,17 @@ const BackgroundStar = (props) => {
     }
 
     function upVelocity() {
-      if (velocity.z < 0.04) {
-        velocity.z += (0.04 + 0.0004) / 100;
-        console.log("hola up");
+      if (velocity.z < 0.06) {
+        velocity.z += (0.06 + 0.0004) / 100;
         requestAnimationFrame(upVelocity);
       }
     }
     function reduceVelocity() {
       if (velocity.z > 0.0004) {
-        velocity.z -= (0.04 - 0.0004) / 100;
-        console.log("hola reduce");
+        velocity.z -= (0.06 - 0.0004) / 100;
         requestAnimationFrame(reduceVelocity);
       } else if (velocity.z < 0.0004) {
         velocity.z = 0.0004;
-        console.log("reduce menor que 0");
       }
     }
 
