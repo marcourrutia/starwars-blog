@@ -15,7 +15,7 @@
 
 .title-400 {
   font-family: "jedi-outline";
-  font-size: clamp(4em, 7vw, 7em);
+  font-size: clamp(4em, 6vw, 8em);
   line-height: 1.1em;
   color: #ffee58;
 }
@@ -23,7 +23,7 @@
 .subtitle {
   font-family: "jedi-subtitle";
   color: white;
-  font-size: clamp(0.9em, 1.5vw, 1.5em);
+  font-size: clamp(0.9em, 1.2vw, 1.6em);
   white-space: nowrap;
   letter-spacing: 0.7em;
   margin-bottom: -1em;

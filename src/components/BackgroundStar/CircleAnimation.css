@@ -1,5 +1,5 @@
 .container {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 100vw; /* Ocupa todo el viewport */
@@ -9,7 +9,7 @@
 }
 
 .circle {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   width: 0;

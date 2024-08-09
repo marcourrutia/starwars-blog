@@ -6,11 +6,11 @@
   border: 1px solid #ffee58;
   transition: 0.2s;
   font-family: "jedi-subtitle";
-  font-size: clamp(12px, 1.5vw, 25px);
+  font-size: clamp(12px, 1.1vw, 22px);
   letter-spacing: 0.5em;
   padding-right: 5px;
-  width: clamp(130px, 16.25vw, 260px);
-  height: clamp(40px, 5vw, 80px);
+  width: clamp(130px, 11.4vw, 240px);
+  height: clamp(40px, 3.5vw, 80px);
 }
 
 #btn-fav:hover {
