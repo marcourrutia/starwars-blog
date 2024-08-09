@@ -68,8 +68,8 @@ function App() {
         }, 3000),
         (
           <>
-            <BackgroundMusic music={starwarsintro} />
             <div className="nav-container">
+              <BackgroundMusic music={starwarsintro} />
               <Title />
               <FavButton />
             </div>

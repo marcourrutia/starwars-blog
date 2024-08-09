@@ -15,17 +15,22 @@ body {
 
 .star-background {
   position: fixed;
+  width: 100%;
+  height: 100%;
   z-index: 1;
 }
 
 .hyper-space {
   position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .start-btn {
-  z-index: 1;
+  z-index: 2;
 }
 
+/* aquí los elementos que van a estar sobre el background de estrellas */
 #btn-fav,
 .btn-music,
 .card-container {

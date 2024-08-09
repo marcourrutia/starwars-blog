@@ -15,6 +15,12 @@
   padding: 1em 2em;
 }
 
+@media (max-width: 430px) {
+  .start-warning-container {
+    width: 90%;
+  }
+}
+
 .start-warning-span-language {
   transition: 0.2s;
   font-size: 2.5em;
@@ -42,6 +48,7 @@
   font-family: "jedi-outline";
   color: #ffffffb2;
   text-shadow: 0 0 5px #fff;
+  text-align: center;
 }
 
 .start-warning-p {
@@ -56,8 +63,11 @@
   color: #ffee58;
   text-shadow: 0 0 5px #eff786;
   font-size: 1.2em;
+  transition: 0.2s;
 }
 
 .start-warning-span:hover {
   cursor: default;
+  transform: scale(1.2);
+  cursor: pointer;
 }

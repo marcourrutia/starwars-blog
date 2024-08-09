@@ -1,33 +1,30 @@
 .title-container {
   display: flex;
-  position: relative;
-  left: 50%;
   flex-direction: column;
   align-items: center;
-  color: white;
-  margin-top: -1.5rem;
-  min-width: 16em;
+  justify-content: center;
   opacity: 0;
-  transform: translateX(-50%) translateY(100%) scale(5);
+  transform: translateY(100%) scale(5);
   transition: opacity 7s ease-in-out, transform 5s ease-in-out;
 }
 
 .title-container.visible {
   opacity: 1;
-  transform: translateX(-50%) scale(1);
+  transform: scale(1);
 }
 
 .title-400 {
   font-family: "jedi-outline";
-  font-size: 4em;
+  font-size: clamp(4em, 7vw, 7em);
+  line-height: 1.1em;
   color: #ffee58;
-  line-height: 1.5;
 }
 
 .subtitle {
   font-family: "jedi-subtitle";
-  font-size: 0.75em;
-  margin-top: -1em;
-  margin-bottom: -2em;
+  color: white;
+  font-size: clamp(0.9em, 1.5vw, 1.5em);
+  white-space: nowrap;
   letter-spacing: 0.7em;
+  margin-bottom: -1em;
 }

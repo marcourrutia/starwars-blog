@@ -1,25 +1,55 @@
 .App {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
 
 .nav-container {
   position: relative;
-  top: 0;
   width: 100%;
-  display: flex;
-  padding: 20px 25px;
-  align-items: center;
+  padding: 10px 25px;
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 1fr) 1fr;
+  gap: 15px;
+  justify-items: center;
+}
+
+.btn-music {
+  justify-self: start;
+}
+
+.title-container {
+  justify-self: center;
+}
+
+#btn-fav {
+  justify-self: end;
+}
+
+@media (max-width: 613px) {
+  .nav-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-music {
+    grid-column: 1;
+  }
+  .title-container {
+    grid-column: 1/3;
+  }
+  #btn-fav {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
 
 .main-container {
   position: relative;
-  display: flex;
-  padding: 2rem 5rem;
-  justify-content: space-between;
-  gap: 1em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-items: center;
+  padding: 30px 25px;
+  gap: 45px;
   opacity: 0;
   transition: 3s ease-in;
 }

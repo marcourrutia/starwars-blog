@@ -2,8 +2,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 22rem;
-  height: 15rem;
+  width: 100%;
   overflow: hidden;
   border-radius: 1em;
   box-shadow: 0 0 1.5em 0.1em #ffee58;
