@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/starwars-blog/static/css/main.55c3519d.css",
-    "main.js": "/starwars-blog/static/js/main.8f5767b3.js",
+    "main.css": "/starwars-blog/static/css/main.94bac2bf.css",
+    "main.js": "/starwars-blog/static/js/main.007f619b.js",
     "static/js/885.cc5b59d7.chunk.js": "/starwars-blog/static/js/885.cc5b59d7.chunk.js",
     "static/js/453.fbf2d574.chunk.js": "/starwars-blog/static/js/453.fbf2d574.chunk.js",
     "static/media/starwarsintro.mp3": "/starwars-blog/static/media/starwarsintro.6a8e3a021f17c5bdcb3c.mp3",
@@ -17,13 +17,13 @@
     "static/media/LightsaberOff.mp3": "/starwars-blog/static/media/LightsaberOff.04033a8138075d32cd73.mp3",
     "static/media/lightsaberHit.mp3": "/starwars-blog/static/media/lightsaberHit.dc881634a135f4db3589.mp3",
     "index.html": "/starwars-blog/index.html",
-    "main.55c3519d.css.map": "/starwars-blog/static/css/main.55c3519d.css.map",
-    "main.8f5767b3.js.map": "/starwars-blog/static/js/main.8f5767b3.js.map",
+    "main.94bac2bf.css.map": "/starwars-blog/static/css/main.94bac2bf.css.map",
+    "main.007f619b.js.map": "/starwars-blog/static/js/main.007f619b.js.map",
     "885.cc5b59d7.chunk.js.map": "/starwars-blog/static/js/885.cc5b59d7.chunk.js.map",
     "453.fbf2d574.chunk.js.map": "/starwars-blog/static/js/453.fbf2d574.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.55c3519d.css",
-    "static/js/main.8f5767b3.js"
+    "static/css/main.94bac2bf.css",
+    "static/js/main.007f619b.js"
   ]
 }
