@@ -74,7 +74,7 @@ function App() {
               <FavButton />
             </div>
             <div className={`main-container ${visible ? "visible" : ""}`}>
-              <BrowserRouter>
+              <BrowserRouter basename="/starwars-blog">
                 <Routes>
                   <Route path="/" element={<Home />} />
                 </Routes>
