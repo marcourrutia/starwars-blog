@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/starwars-blog/static/css/main.55c3519d.css",
+    "main.js": "/starwars-blog/static/js/main.8f5767b3.js",
+    "static/js/885.cc5b59d7.chunk.js": "/starwars-blog/static/js/885.cc5b59d7.chunk.js",
+    "static/js/453.fbf2d574.chunk.js": "/starwars-blog/static/js/453.fbf2d574.chunk.js",
+    "static/media/starwarsintro.mp3": "/starwars-blog/static/media/starwarsintro.6a8e3a021f17c5bdcb3c.mp3",
+    "static/media/LightsaberActive.mp3": "/starwars-blog/static/media/LightsaberActive.9eaa7c094861f8666e60.mp3",
+    "static/media/starships.jpg": "/starwars-blog/static/media/starships.77708a92d58ad3222870.jpg",
+    "static/media/planets.jpg": "/starwars-blog/static/media/planets.47504e74e499aff6f847.jpg",
+    "static/media/Starjhol.ttf": "/starwars-blog/static/media/Starjhol.c247ee6825d52f9d0862.ttf",
+    "static/media/characters.jpg": "/starwars-blog/static/media/characters.ec6f4631b53bc3c10e68.jpg",
+    "static/media/TypoGroteskDemo.otf": "/starwars-blog/static/media/TypoGroteskDemo.ec3f6624ce96cfc506fc.otf",
+    "static/media/Starjedi.ttf": "/starwars-blog/static/media/Starjedi.8d577dc1e1755c4860f3.ttf",
+    "static/media/Biko_Regular.otf": "/starwars-blog/static/media/Biko_Regular.195571b30fe4ae9fb6e7.otf",
+    "static/media/LightsaberOn.mp3": "/starwars-blog/static/media/LightsaberOn.c89f65fb67b61e0fad66.mp3",
+    "static/media/LightsaberOff.mp3": "/starwars-blog/static/media/LightsaberOff.04033a8138075d32cd73.mp3",
+    "static/media/lightsaberHit.mp3": "/starwars-blog/static/media/lightsaberHit.dc881634a135f4db3589.mp3",
+    "index.html": "/starwars-blog/index.html",
+    "main.55c3519d.css.map": "/starwars-blog/static/css/main.55c3519d.css.map",
+    "main.8f5767b3.js.map": "/starwars-blog/static/js/main.8f5767b3.js.map",
+    "885.cc5b59d7.chunk.js.map": "/starwars-blog/static/js/885.cc5b59d7.chunk.js.map",
+    "453.fbf2d574.chunk.js.map": "/starwars-blog/static/js/453.fbf2d574.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.55c3519d.css",
+    "static/js/main.8f5767b3.js"
+  ]
+}
