@@ -13,6 +13,10 @@
   transform: scale(1);
 }
 
+.title-img {
+  width: clamp(200px, 20vw, 600px);
+}
+
 .title-400 {
   font-family: "jedi-outline";
   font-size: clamp(4em, 6vw, 8em);
