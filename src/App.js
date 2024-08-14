@@ -1,5 +1,5 @@
 import "./App.css";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import { AppRouter } from "./Router";
 import {
@@ -7,7 +7,6 @@ import {
   lightsaberHit,
   LightsaberOff,
   LightsaberOn,
-  starwarsintro,
 } from "./assets/music";
 import {
   BackgroundMusic,
@@ -19,6 +18,7 @@ import {
   CircleAnimation,
   StartWarning,
 } from "./components";
+import injectContext, { Context } from "./store/context";
 
 function App() {
   const [startPage, setStartPage] = useState(true);
@@ -72,14 +72,12 @@ function App() {
           (
             <>
               <div className="nav-container">
-                <BackgroundMusic music={starwarsintro} />
+                <BackgroundMusic />
                 <Title />
                 <FavButton />
               </div>
               <div className={`main-container ${visible ? "visible" : ""}`}>
-                <Suspense fallback={<div>Loading...</div>}>
-                  <AppRouter />
-                </Suspense>
+                <AppRouter />
               </div>
             </>
           ))}
@@ -88,4 +86,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);

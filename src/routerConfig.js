@@ -1,4 +1,4 @@
-import { Characters, Home } from "./views";
+import { Characters, Home, Planets } from "./views";
 
 export const routes = [
   {
@@ -8,5 +8,9 @@ export const routes = [
   {
     path: "/characters",
     element: <Characters />,
+  },
+  {
+    path: "/planets",
+    element: <Planets />,
   },
 ];

@@ -35,9 +35,7 @@ body {
   z-index: 2;
 }
 
-/* aquí los elementos que van a estar sobre el background de estrellas */
-#btn-fav,
-.btn-music,
-.card-container {
+/* clase para elementos que van a estar sobre el background de estrellas */
+.foreground {
   z-index: 2;
 }

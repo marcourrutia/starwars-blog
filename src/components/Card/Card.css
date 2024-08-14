@@ -31,8 +31,8 @@
 
 .card-span {
   position: absolute;
-  text-align: center;
   top: 60%;
+  text-align: center;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.719);
   color: white;

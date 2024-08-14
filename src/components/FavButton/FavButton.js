@@ -4,7 +4,7 @@ export const FavButton = (props) => {
   return (
     <>
       <button
-        className="btn btn-outline-warning"
+        className="btn btn-outline-warning foreground"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasScrolling"

@@ -1,7 +1,11 @@
 const getState = ({ getActions, getStore, setStore }) => {
   return {
-    store: {},
-    actions: {},
+    store: {
+      ambientMusic: null,
+    },
+    actions: {
+      setAmbientMusic: (music) => setStore({ ambientMusic: music }),
+    },
   };
 };
 

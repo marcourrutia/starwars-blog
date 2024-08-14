@@ -1,11 +1,15 @@
 import "./StartButton.css";
+import { useContext } from "react";
+import { Context } from "../../store/context";
 import useSound from "use-sound";
+import { starwarsintro } from "../../assets/music";
 
 export const StartButton = (props) => {
   const [on] = useSound(props.lSOn);
   const [off] = useSound(props.lSOff);
   const [active, { stop }] = useSound(props.lSActive);
   const [hit] = useSound(props.lSHit);
+  const { actions } = useContext(Context);
 
   const handleMouseEnter = () => {
     on();
@@ -23,6 +27,7 @@ export const StartButton = (props) => {
     stop();
     hit();
     props.setStartPage(false);
+    actions.setAmbientMusic(starwarsintro);
   }
 
   return (

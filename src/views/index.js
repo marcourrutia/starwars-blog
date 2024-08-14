@@ -1,4 +1,5 @@
-import React from "react";
-
+/* import { lazy } from "react"; */
 export { Home } from "./Home/Home";
-export const Characters = React.lazy(() => import("./Characters/Characters"));
+/* export const Characters = lazy(() => import("./Characters/Characters")); */
+export { Characters } from "./Characters/Characters";
+export { Planets } from "./Planets/Planets";
