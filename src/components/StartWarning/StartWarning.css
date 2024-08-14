@@ -60,8 +60,8 @@
 
 .start-warning-span {
   font-family: "jedi-outline";
-  color: #ffee58;
-  text-shadow: 0 0 5px #eff786;
+  color: var(--primary-color);
+  text-shadow: 0 0 10px var(--primary-color-shadow);
   font-size: 1.2em;
   transition: 0.2s;
 }

@@ -1,6 +1,7 @@
 .title-container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -17,18 +18,10 @@
   width: clamp(200px, 20vw, 600px);
 }
 
-.title-400 {
-  font-family: "jedi-outline";
-  font-size: clamp(4em, 6vw, 8em);
-  line-height: 1.1em;
-  color: #ffee58;
-}
-
 .subtitle {
   font-family: "jedi-subtitle";
   color: white;
   font-size: clamp(0.9em, 1.2vw, 1.6em);
   white-space: nowrap;
   letter-spacing: 0.7em;
-  margin-bottom: -1em;
 }

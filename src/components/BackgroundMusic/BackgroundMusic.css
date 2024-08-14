@@ -1,6 +1,6 @@
 .btn-music {
-  color: #ffee58;
-  border: 1px solid #ffee58;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   transition: 0.2s;
   width: clamp(40px, 3.5vw, 80px); /* 40px; */
   height: clamp(40px, 3.5vw, 80px); /* 40px; */
@@ -8,6 +8,6 @@
 }
 
 .btn-music:hover {
-  background-color: #aa9b168e;
-  color: #fff495;
+  background-color: var(--primary-color-shadow);
+  color: var(--primary-color);
 }

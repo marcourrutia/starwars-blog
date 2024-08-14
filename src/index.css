@@ -1,5 +1,10 @@
 @import "./assets/fonts/fonts.css";
 
+:root {
+  --primary-color: #ffe820;
+  --primary-color-shadow: #958c0ede;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,6 +1,7 @@
 import "./App.css";
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Suspense, useEffect, useState } from "react";
+import { BrowserRouter, Link } from "react-router-dom";
+import { AppRouter } from "./Router";
 import {
   LightsaberActive,
   lightsaberHit,
@@ -18,7 +19,6 @@ import {
   CircleAnimation,
   StartWarning,
 } from "./components";
-import { Home } from "./views";
 
 function App() {
   const [startPage, setStartPage] = useState(true);
@@ -41,48 +41,50 @@ function App() {
   }, [hyperSpace]);
 
   return (
-    <div className="App">
-      {warning && <StartWarning setWarning={setWarning} />}
-      {hyperSpace && <HyperSpace />}
-      {circleClean && <CircleAnimation setCircleClean={setCircleCLean} />}
-      <BackgroundStar
-        hyper={hyperSpace}
-        setHyper={setHyperSpace}
-        mouse={mouse}
-        setMouse={setMouse}
-      />
-      {startPage && (
-        <StartButton
-          setStartPage={setStartPage}
+    <BrowserRouter basename="/starwars-blog">
+      <div className="App">
+        {warning && <StartWarning setWarning={setWarning} />}
+        {hyperSpace && <HyperSpace />}
+        {circleClean && <CircleAnimation setCircleClean={setCircleCLean} />}
+        <BackgroundStar
+          hyper={hyperSpace}
           setHyper={setHyperSpace}
+          mouse={mouse}
           setMouse={setMouse}
-          lSOn={LightsaberOn}
-          lSOff={LightsaberOff}
-          lSActive={LightsaberActive}
-          lSHit={lightsaberHit}
         />
-      )}
-      {!startPage &&
-        (setTimeout(() => {
-          setVisible(true);
-        }, 3000),
-        (
-          <>
-            <div className="nav-container">
-              <BackgroundMusic music={starwarsintro} />
-              <Title />
-              <FavButton />
-            </div>
-            <div className={`main-container ${visible ? "visible" : ""}`}>
-              <BrowserRouter basename="/starwars-blog">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                </Routes>
-              </BrowserRouter>
-            </div>
-          </>
-        ))}
-    </div>
+        {startPage && (
+          <Link to={"/home"}>
+            <StartButton
+              setStartPage={setStartPage}
+              setHyper={setHyperSpace}
+              setMouse={setMouse}
+              lSOn={LightsaberOn}
+              lSOff={LightsaberOff}
+              lSActive={LightsaberActive}
+              lSHit={lightsaberHit}
+            />
+          </Link>
+        )}
+        {!startPage &&
+          (setTimeout(() => {
+            setVisible(true);
+          }, 3000),
+          (
+            <>
+              <div className="nav-container">
+                <BackgroundMusic music={starwarsintro} />
+                <Title />
+                <FavButton />
+              </div>
+              <div className={`main-container ${visible ? "visible" : ""}`}>
+                <Suspense fallback={<div>Loading...</div>}>
+                  <AppRouter />
+                </Suspense>
+              </div>
+            </>
+          ))}
+      </div>
+    </BrowserRouter>
   );
 }
 

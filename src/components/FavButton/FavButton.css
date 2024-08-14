@@ -2,8 +2,8 @@
   position: fixed;
   top: 10px;
   right: 25px;
-  color: #ffee58;
-  border: 1px solid #ffee58;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   transition: 0.2s;
   font-family: "jedi-subtitle";
   font-size: clamp(12px, 1.1vw, 22px);
@@ -14,8 +14,7 @@
 }
 
 #btn-fav:hover {
-  background-color: #aa9b168e;
-  color: #fff495;
+  background-color: var(--primary-color-shadow);
 }
 
 #offcanvasScrolling {
