@@ -42,22 +42,3 @@
     grid-row: 1;
   }
 }
-
-.main-container {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  justify-items: center;
-  padding: 30px 25px;
-  gap: 45px;
-  opacity: 0;
-  transition: 3s ease-in;
-}
-
-.main-container.visible {
-  opacity: 1;
-}
-
-a {
-  text-decoration: none;
-}

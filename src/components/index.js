@@ -7,3 +7,5 @@ export { Card } from "./Card/Card";
 export { BackgroundMusic } from "./BackgroundMusic/BackgroundMusic";
 export { StartButton } from "./StartButton/StartButton";
 export { StartWarning } from "./StartWarning/StartWarning";
+export { CharacterCard } from "./CharacterCard/CharacterCard";
+export { BackBtn } from "./BackBtn/BackBtn";

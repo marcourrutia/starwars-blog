@@ -1,0 +1,33 @@
+.chr-card-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid white;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.chr-card-main-container:hover {
+  transform: scale(1.1);
+  opacity: 1;
+  cursor: pointer;
+  box-shadow: 0 0 10px 3px var(--primary-color);
+  border: none;
+}
+
+.chr-card-img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.chr-card-span {
+  width: 100%;
+  background-color: white;
+  color: black;
+  font-size: 1.1em;
+  font-family: "biko";
+  text-align: center;
+  letter-spacing: 1px;
+}

@@ -9,16 +9,15 @@ export const Home = () => {
   const { store, actions } = useContext(Context);
   useEffect(() => {
     actions.setAmbientMusic(starwarsintro);
-
     return () => {
       actions.setAmbientMusic(null);
     };
   }, []);
   return (
-    <>
+    <div className={`home-container ${store.homeVisible ? "visible" : ""}`}>
       <Card cardSpan="characters" cardImg={characters} url="/characters" />
       <Card cardSpan="starships" cardImg={starships} url="/starships" />
       <Card cardSpan="planets" cardImg={planets} url="/planets" />
-    </>
+    </div>
   );
 };

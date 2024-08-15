@@ -1,0 +1,18 @@
+.btn-global-back {
+  position: relative;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 7px;
+  font-family: "jedi-subtitle";
+  font-size: clamp(10px, 1.1vw, 20px);
+  letter-spacing: 0.5em;
+  padding: 3px 0 3px 3px;
+  width: clamp(65px, 8vw, 95px);
+  height: clamp(25px, 2vw, 30px);
+  transition: 0.2s;
+}
+
+.btn-global-back:hover {
+  background-color: var(--primary-color-shadow);
+}

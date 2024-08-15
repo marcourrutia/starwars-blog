@@ -1,29 +1,30 @@
-import { useState, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../../store/context";
 import { useGlobalAudioPlayer } from "react-use-audio-player";
 import "./BackgroundMusic.css";
 import { MdMusicNote, MdMusicOff } from "react-icons/md";
-import { starwarsintro } from "../../assets/music";
 
 export const BackgroundMusic = () => {
   const { store, actions } = useContext(Context);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const { load, pause, play } = useGlobalAudioPlayer();
+  const { load, pause, play, setVolume } = useGlobalAudioPlayer();
 
   useEffect(() => {
-    load(store.ambientMusic, {
-      autoplay: true,
-      loop: true,
-    });
+    if (store.ambientMusic) {
+      load(store.ambientMusic, {
+        loop: true,
+        autoplay: store.ambientMusicPlay,
+      });
+      setVolume(0.4);
+    }
   }, [store.ambientMusic]);
 
   const togglePlay = () => {
-    if (isPlaying) {
+    if (store.ambientMusicPlay) {
       pause();
     } else {
       play();
     }
-    setIsPlaying(!isPlaying);
+    actions.setAmbientMusicPlay(!store.ambientMusicPlay);
   };
 
   return (
@@ -31,7 +32,7 @@ export const BackgroundMusic = () => {
       className="btn-music btn btn-outline-warning foreground"
       onClick={togglePlay}
     >
-      {isPlaying ? <MdMusicNote /> : <MdMusicOff />}
+      {store.ambientMusicPlay ? <MdMusicNote /> : <MdMusicOff />}
     </button>
   );
 };

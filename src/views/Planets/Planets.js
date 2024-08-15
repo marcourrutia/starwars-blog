@@ -1,13 +1,13 @@
 import { useEffect, useContext } from "react";
 import { Context } from "../../store/context";
-import { planetsMusic } from "../../assets/music";
+import { tatooineTheme } from "../../assets/music";
 import { Link } from "react-router-dom";
 
 export const Planets = (props) => {
   const { actions } = useContext(Context);
 
   useEffect(() => {
-    actions.setAmbientMusic(planetsMusic);
+    actions.setAmbientMusic(tatooineTheme);
 
     return () => {
       actions.setAmbientMusic(null);

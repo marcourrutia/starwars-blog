@@ -1,7 +1,9 @@
 import "./App.css";
-import { useEffect, useState, useContext } from "react";
-import { BrowserRouter, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BrowserRouter } from "react-router-dom";
 import { AppRouter } from "./Router";
+import { useContext } from "react";
+import { Context } from "./store/context";
 import {
   LightsaberActive,
   lightsaberHit,
@@ -18,15 +20,15 @@ import {
   CircleAnimation,
   StartWarning,
 } from "./components";
-import injectContext, { Context } from "./store/context";
+import injectContext from "./store/context";
 
 function App() {
   const [startPage, setStartPage] = useState(true);
-  const [visible, setVisible] = useState(false);
   const [hyperSpace, setHyperSpace] = useState(false);
   const [circleClean, setCircleCLean] = useState(false);
   const [mouse, setMouse] = useState(true);
   const [warning, setWarning] = useState(true);
+  const { actions } = useContext(Context);
 
   useEffect(() => {
     if (hyperSpace) {
@@ -34,8 +36,8 @@ function App() {
         setCircleCLean(true);
       }, 3000);
       const timer2 = setTimeout(() => {
-        setVisible(true);
-      }, 2000);
+        actions.setHomeVisible(true);
+      }, 2800);
       return () => clearTimeout(timer, timer2);
     }
   }, [hyperSpace]);
@@ -53,34 +55,26 @@ function App() {
           setMouse={setMouse}
         />
         {startPage && (
-          <Link to={"/home"}>
-            <StartButton
-              setStartPage={setStartPage}
-              setHyper={setHyperSpace}
-              setMouse={setMouse}
-              lSOn={LightsaberOn}
-              lSOff={LightsaberOff}
-              lSActive={LightsaberActive}
-              lSHit={lightsaberHit}
-            />
-          </Link>
+          <StartButton
+            setStartPage={setStartPage}
+            setHyper={setHyperSpace}
+            setMouse={setMouse}
+            lSOn={LightsaberOn}
+            lSOff={LightsaberOff}
+            lSActive={LightsaberActive}
+            lSHit={lightsaberHit}
+          />
         )}
-        {!startPage &&
-          (setTimeout(() => {
-            setVisible(true);
-          }, 3000),
-          (
-            <>
-              <div className="nav-container">
-                <BackgroundMusic />
-                <Title />
-                <FavButton />
-              </div>
-              <div className={`main-container ${visible ? "visible" : ""}`}>
-                <AppRouter />
-              </div>
-            </>
-          ))}
+        {!startPage && (
+          <>
+            <div className="nav-container">
+              <BackgroundMusic />
+              <Title />
+              <FavButton />
+            </div>
+            <AppRouter />
+          </>
+        )}
       </div>
     </BrowserRouter>
   );

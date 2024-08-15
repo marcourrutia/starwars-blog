@@ -1,4 +1,4 @@
-import { Characters, Home, Planets } from "./views";
+import { Characters, Home, Planets, Starships } from "./views";
 
 export const routes = [
   {
@@ -8,6 +8,10 @@ export const routes = [
   {
     path: "/characters",
     element: <Characters />,
+  },
+  {
+    path: "/starships",
+    element: <Starships />,
   },
   {
     path: "/planets",

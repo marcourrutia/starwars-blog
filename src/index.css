@@ -16,6 +16,7 @@
 body {
   position: relative;
   background-color: black;
+  min-width: 330px;
 }
 
 .star-background {
