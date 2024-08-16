@@ -21,6 +21,7 @@ import {
   StartWarning,
 } from "./components";
 import injectContext from "./store/context";
+import { Loading } from "./components/Loading/Loading";
 
 function App() {
   const [startPage, setStartPage] = useState(true);

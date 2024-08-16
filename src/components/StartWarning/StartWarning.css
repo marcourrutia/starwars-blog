@@ -7,7 +7,7 @@
   z-index: 10;
   display: flex;
   flex-direction: column;
-  width: 35em;
+  width: clamp(180px, 80%, 500px);
   align-items: center;
   background-color: rgb(44, 47, 87);
   border: 2px solid rgb(185, 185, 248);
@@ -64,6 +64,7 @@
   text-shadow: 0 0 10px var(--primary-color-shadow);
   font-size: 1.2em;
   transition: 0.2s;
+  text-align: center;
 }
 
 .start-warning-span:hover {

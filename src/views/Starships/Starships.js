@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react";
 import { Context } from "../../store/context";
 import { thePodRace } from "../../assets/music";
+import { BackBtn, Loading } from "../../components";
 
 export const Starships = () => {
   const { actions } = useContext(Context);
@@ -14,8 +15,9 @@ export const Starships = () => {
   }, []);
 
   return (
-    <div>
-      <h1></h1>
-    </div>
+    <>
+      <BackBtn />
+      <Loading />
+    </>
   );
 };

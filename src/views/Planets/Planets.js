@@ -1,7 +1,7 @@
 import { useEffect, useContext } from "react";
 import { Context } from "../../store/context";
 import { tatooineTheme } from "../../assets/music";
-import { Link } from "react-router-dom";
+import { BackBtn, Loading } from "../../components";
 
 export const Planets = (props) => {
   const { actions } = useContext(Context);
@@ -14,11 +14,9 @@ export const Planets = (props) => {
     };
   }, []);
   return (
-    <div className="foreground">
-      <h1>Planets</h1>
-      <Link to="/home" className="foreground">
-        <button>volver</button>
-      </Link>
-    </div>
+    <>
+      <BackBtn />
+      <Loading />
+    </>
   );
 };

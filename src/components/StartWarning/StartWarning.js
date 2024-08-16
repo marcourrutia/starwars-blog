@@ -1,5 +1,5 @@
 import "./StartWarning.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaLanguage } from "react-icons/fa6";
 
 export const StartWarning = (props) => {

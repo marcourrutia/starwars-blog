@@ -18,7 +18,7 @@ export const FavButton = (props) => {
         className="offcanvas offcanvas-end"
         data-bs-scroll="true"
         data-bs-backdrop="false"
-        tabindex="-1"
+        tabIndex="-1"
         id="offcanvasScrolling"
         aria-labelledby="offcanvasScrollingLabel"
       >
