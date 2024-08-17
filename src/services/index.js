@@ -1,2 +1,2 @@
-export { fetchData } from "./fetchData";
-export { loadImages } from "./loadImages";
+export { useFetch } from "./useFetch";
+export { useImageLoader } from "./useImageLoader";
