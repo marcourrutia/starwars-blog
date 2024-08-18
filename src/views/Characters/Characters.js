@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Context } from "../../store/context";
 import { useFetch, useImageLoader } from "../../services";
 import { duelOfTheFates } from "../../assets/music";
-import { BackBtn, CharacterCard, Loading } from "../../components";
+import { BackBtn, CharacterCard, Loading, Pagination } from "../../components";
 
 export const Characters = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,27 +11,40 @@ export const Characters = () => {
   const { actions } = useContext(Context);
 
   const { data, loading } = useFetch(
-    `https://www.swapi.tech/api/people?page=${currentPage}&limit=15`
+    `https://www.swapi.tech/api/people?page=${currentPage}&limit=10`
+  );
+
+  const { imgUrls, imgLoading } = useImageLoader(
+    "https://starwars-visualguide.com/assets/img/characters",
+    data
   );
 
   useEffect(() => {
     actions.setAmbientMusic(duelOfTheFates);
   }, []);
 
+  useEffect(() => {
+    if (!loading && data) {
+      setTotalPages(data.total_pages);
+    }
+  }, [loading, data]);
+  console.log(currentPage);
+
   return (
     <div className="chr-container">
       <div className="chr-container-header">
         <BackBtn />
-        <div className="chr-btn-container">
-          <button className="chr-btn-page foreground">1</button>
-          <button className="chr-btn-next">next</button>
-        </div>
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+        />
       </div>
       <div className="chr-cards-container">
         {loading ? (
           <Loading />
         ) : (
-          data.results?.map((item, index) => (
+          data?.results.map((item, index) => (
             <CharacterCard
               key={index}
               chrCardImg={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`}

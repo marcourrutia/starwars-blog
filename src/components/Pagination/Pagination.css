@@ -1,0 +1,25 @@
+.pgn-btn-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pgn-btn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  padding: 0px 10px;
+  transition: 0.2s;
+  font-size: clamp(10px, 1.3vw, 30px);
+}
+
+.pgn-btn:hover {
+  background-color: var(--primary-color-shadow);
+  color: var(--primary-color);
+}
+
+.is-current {
+  background-color: var(--primary-color-shadow);
+  color: var(--primary-color);
+}

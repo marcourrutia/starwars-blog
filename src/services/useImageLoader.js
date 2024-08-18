@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export function useImageLoader(baseUrl, data) {
-  const [imageUrls, setImageUrls] = useState([]);
+  const [imgUrls, setimgUrls] = useState([]);
   const [imgLoading, setImgLoading] = useState(true);
 
   useEffect(() => {
@@ -9,7 +9,7 @@ export function useImageLoader(baseUrl, data) {
 
     // Crear las URLs basadas en los IDs
     const urls = data.map((item) => `${baseUrl}/${item.id}.jpg`);
-    setImageUrls(urls);
+    setimgUrls(urls);
 
     let loadedCount = 0;
 
@@ -26,7 +26,6 @@ export function useImageLoader(baseUrl, data) {
       const img = new Image();
       img.src = url;
       img.onload = handleImageLoad;
-      /* img.onerror = handleImageError; */
     });
 
     return () => {
@@ -35,5 +34,5 @@ export function useImageLoader(baseUrl, data) {
     };
   }, [baseUrl, data]);
 
-  return { imageUrls, imgLoading };
+  return { imgUrls, imgLoading };
 }

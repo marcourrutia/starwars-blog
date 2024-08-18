@@ -12,20 +12,26 @@ export function useFetch(url) {
     setLoading(true);
 
     fetch(url, { signal: abortController.signal })
-      .then((response) => response.json())
-      .then((data) => setData(data))
+      .then((response) => {
+        setLoading(false);
+        return response.json();
+      })
+      .then((data) => {
+        if (data) {
+          setData(data);
+        }
+      })
       .catch((error) => {
         if (error.name === "AbortError") {
           setError("Request cancelled");
         } else {
           setError(error);
         }
-      })
-      .finally(() => setLoading(false));
+      });
 
     /* si el componente se desmonta se aborta el fetch */
     return () => abortController.abort();
-  }, []);
+  }, [url]);
 
   /* funcion para cancelar el fetch manualmente */
   const handleCancelRequest = () => {
