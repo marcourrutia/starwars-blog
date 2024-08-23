@@ -1,7 +1,7 @@
 import "./Characters.css";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../store/context";
-import { useFetch, useImageLoader } from "../../services";
+import { useFetch } from "../../services";
 import { duelOfTheFates } from "../../assets/music";
 import { BackBtn, CharacterCard, Loading, Pagination } from "../../components";
 
@@ -12,11 +12,6 @@ export const Characters = () => {
 
   const { data, loading } = useFetch(
     `https://www.swapi.tech/api/people?page=${currentPage}&limit=10`
-  );
-
-  const { imgUrls, imgLoading } = useImageLoader(
-    "https://starwars-visualguide.com/assets/img/characters",
-    data
   );
 
   useEffect(() => {
