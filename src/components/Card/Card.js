@@ -16,6 +16,11 @@ export const Card = (props) => {
         src={props.cardImg}
         alt={props.cardAltImg}
       ></img>
+      <img
+        className="card-img-png"
+        src={props.cardImgPng}
+        alt={props.cardAltImg}
+      ></img>
       <span className="card-span">{props.cardSpan}</span>
     </div>
   );

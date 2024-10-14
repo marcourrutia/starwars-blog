@@ -7,9 +7,7 @@
   font-family: "jedi-subtitle";
   font-size: clamp(10px, 1.1vw, 20px);
   letter-spacing: 0.5em;
-  padding: 3px 0 3px 3px;
-  width: clamp(65px, 8vw, 95px);
-  height: clamp(25px, 2vw, 30px);
+  padding: 8px 8px 8px 15px;
   transition: 0.2s;
 }
 

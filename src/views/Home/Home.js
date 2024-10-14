@@ -1,6 +1,13 @@
 import "./Home.css";
 import { Card } from "../../components";
-import { characters, starships, planets } from "../../assets/images";
+import {
+  characters,
+  starships,
+  planets,
+  darthVaderPng,
+  milenumFalcon,
+  tatooine,
+} from "../../assets/images";
 import { useEffect, useContext } from "react";
 import { Context } from "../../store/context";
 import { starwarsintro } from "../../assets/music";
@@ -15,9 +22,24 @@ export const Home = () => {
   }, []);
   return (
     <div className={`home-container ${store.homeVisible ? "visible" : ""}`}>
-      <Card cardSpan="characters" cardImg={characters} url="/characters" />
-      <Card cardSpan="starships" cardImg={starships} url="/starships" />
-      <Card cardSpan="planets" cardImg={planets} url="/planets" />
+      <Card
+        cardSpan="characters"
+        cardImg={characters}
+        cardImgPng={darthVaderPng}
+        url="/characters"
+      />
+      <Card
+        cardSpan="starships"
+        cardImg={starships}
+        cardImgPng={milenumFalcon}
+        url="/starships"
+      />
+      <Card
+        cardSpan="planets"
+        cardImg={planets}
+        cardImgPng={tatooine}
+        url="/planets"
+      />
     </div>
   );
 };
