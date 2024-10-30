@@ -1,4 +1,4 @@
-import { Characters, Home, Planets, Starships } from "./views";
+import { Home, ItemList } from "./views";
 
 export const routes = [
   {
@@ -6,15 +6,7 @@ export const routes = [
     element: <Home />,
   },
   {
-    path: "/characters",
-    element: <Characters />,
-  },
-  {
-    path: "/starships",
-    element: <Starships />,
-  },
-  {
-    path: "/planets",
-    element: <Planets />,
+    path: "/item-list",
+    element: <ItemList />,
   },
 ];

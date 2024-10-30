@@ -10,7 +10,12 @@ import {
 } from "../../assets/images";
 import { useEffect, useContext } from "react";
 import { Context } from "../../store/context";
-import { starwarsintro } from "../../assets/music";
+import {
+  duelOfTheFates,
+  starwarsintro,
+  tatooineTheme,
+  thePodRace,
+} from "../../assets/music";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -26,19 +31,25 @@ export const Home = () => {
         cardSpan="characters"
         cardImg={characters}
         cardImgPng={darthVaderPng}
-        url="/characters"
+        url="people"
+        loadMusic={duelOfTheFates}
+        itemImg="characters"
       />
       <Card
         cardSpan="starships"
         cardImg={starships}
         cardImgPng={milenumFalcon}
-        url="/starships"
+        url="starships"
+        loadMusic={thePodRace}
+        itemImg="starships"
       />
       <Card
         cardSpan="planets"
         cardImg={planets}
         cardImgPng={tatooine}
-        url="/planets"
+        url="planets"
+        loadMusic={tatooineTheme}
+        itemImg="planets"
       />
     </div>
   );

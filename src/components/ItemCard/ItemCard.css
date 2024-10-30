@@ -10,7 +10,7 @@
 }
 
 .chr-card-main-container:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
   opacity: 1;
   cursor: pointer;
   box-shadow: 0 0 10px 3px var(--primary-color);
@@ -18,13 +18,13 @@
 }
 
 .chr-card-main-container:active {
-  transform: scale(0.9);
+  transform: scale(0.97);
   transition: 0.1s;
 }
 
 .chr-card-img {
-  object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
 .chr-card-span {

@@ -4,7 +4,7 @@ export { default as BackgroundStar } from "./BackgroundStar/BackgroundStar";
 export { CircleAnimation } from "./BackgroundStar/CircleAnimation";
 export { default as HyperSpace } from "./BackgroundStar/HyperSpace";
 export { Card } from "./Card/Card";
-export { CharacterCard } from "./CharacterCard/CharacterCard";
+export { ItemCard } from "./ItemCard/ItemCard";
 export { FavButton } from "./FavButton/FavButton";
 export { Loading } from "./Loading/Loading";
 export { Pagination } from "./Pagination/Pagination";

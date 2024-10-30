@@ -1,22 +1,23 @@
-import "./Characters.css";
+import "./ItemList.css";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../store/context";
 import { useFetch } from "../../services";
-import { duelOfTheFates } from "../../assets/music";
-import { BackBtn, CharacterCard, Loading, Pagination } from "../../components";
+import { BackBtn, ItemCard, Loading, Pagination } from "../../components";
 
-export const Characters = () => {
+export const ItemList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const { actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
 
   const { data, loading } = useFetch(
-    `https://www.swapi.tech/api/people?page=${currentPage}&limit=10`
+    `https://www.swapi.tech/api/${store.url}?page=${currentPage}&limit=10`
   );
 
   useEffect(() => {
-    actions.setAmbientMusic(duelOfTheFates);
-  }, []);
+    if (store.loadMusic) {
+      actions.setAmbientMusic(store.loadMusic);
+    }
+  }, [store.loadMusic]);
 
   useEffect(() => {
     if (!loading && data) {
@@ -40,10 +41,11 @@ export const Characters = () => {
           <Loading />
         ) : (
           data?.results.map((item, index) => (
-            <CharacterCard
+            <ItemCard
               key={index}
-              chrCardImg={`https://starwars-visualguide.com/assets/img/characters/${item.uid}.jpg`}
+              chrCardImg={`https://starwars-visualguide.com/assets/img/${store.itemImg}/${item.uid}.jpg`}
               chrCardSpan={item.name}
+              chrId={item.uid}
             />
           ))
         )}
