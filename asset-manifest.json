@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/starwars-blog/static/css/main.53a9b683.css",
-    "main.js": "/starwars-blog/static/js/main.51f3e697.js",
+    "main.css": "/starwars-blog/static/css/main.617754cd.css",
+    "main.js": "/starwars-blog/static/js/main.4dc8f312.js",
     "static/js/453.fbf2d574.chunk.js": "/starwars-blog/static/js/453.fbf2d574.chunk.js",
     "static/media/thePodRace.mp3": "/starwars-blog/static/media/thePodRace.a70e7af9f169762f268f.mp3",
     "static/media/duelOfTheFates.mp3": "/starwars-blog/static/media/duelOfTheFates.fc408004e8c2ce95aa65.mp3",
     "static/media/starwarsintro.mp3": "/starwars-blog/static/media/starwarsintro.6a8e3a021f17c5bdcb3c.mp3",
     "static/media/tatooineTheme.mp3": "/starwars-blog/static/media/tatooineTheme.ec220d0fa9e1f87ecca5.mp3",
     "static/media/starwarsCantina.mp3": "/starwars-blog/static/media/starwarsCantina.6031f07606a94361cd62.mp3",
+    "static/media/mileniumFalcon.png": "/starwars-blog/static/media/mileniumFalcon.6b60ff017773eb298fdd.png",
+    "static/media/img-not-found.webp": "/starwars-blog/static/media/img-not-found.628bab9d934d71006af2.webp",
     "static/media/LightsaberActive.mp3": "/starwars-blog/static/media/LightsaberActive.9eaa7c094861f8666e60.mp3",
+    "static/media/tatooine.png": "/starwars-blog/static/media/tatooine.9093190245c35082780a.png",
     "static/media/starships.jpg": "/starwars-blog/static/media/starships.77708a92d58ad3222870.jpg",
+    "static/media/darthVaderPNG.png": "/starwars-blog/static/media/darthVaderPNG.17da8a9cb16a77222dd0.png",
     "static/media/title.png": "/starwars-blog/static/media/title.44b4e47d454fe98e55fe.png",
     "static/media/planets.jpg": "/starwars-blog/static/media/planets.47504e74e499aff6f847.jpg",
     "static/media/Starjhol.ttf": "/starwars-blog/static/media/Starjhol.c247ee6825d52f9d0862.ttf",
@@ -21,12 +25,12 @@
     "static/media/LightsaberOff.mp3": "/starwars-blog/static/media/LightsaberOff.04033a8138075d32cd73.mp3",
     "static/media/lightsaberHit.mp3": "/starwars-blog/static/media/lightsaberHit.dc881634a135f4db3589.mp3",
     "index.html": "/starwars-blog/index.html",
-    "main.53a9b683.css.map": "/starwars-blog/static/css/main.53a9b683.css.map",
-    "main.51f3e697.js.map": "/starwars-blog/static/js/main.51f3e697.js.map",
+    "main.617754cd.css.map": "/starwars-blog/static/css/main.617754cd.css.map",
+    "main.4dc8f312.js.map": "/starwars-blog/static/js/main.4dc8f312.js.map",
     "453.fbf2d574.chunk.js.map": "/starwars-blog/static/js/453.fbf2d574.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53a9b683.css",
-    "static/js/main.51f3e697.js"
+    "static/css/main.617754cd.css",
+    "static/js/main.4dc8f312.js"
   ]
 }
