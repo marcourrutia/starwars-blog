@@ -1,4 +1,4 @@
-import { Home, ItemList } from "./views";
+import { Home, ItemDetail, ItemList } from "./views";
 
 export const routes = [
   {
@@ -8,5 +8,9 @@ export const routes = [
   {
     path: "/item-list",
     element: <ItemList />,
+  },
+  {
+    path: "/item-details/:id",
+    element: <ItemDetail />,
   },
 ];

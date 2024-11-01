@@ -9,6 +9,7 @@
   letter-spacing: 0.5em;
   padding: 8px 8px 8px 15px;
   transition: 0.2s;
+  width: fit-content;
 }
 
 .btn-global-back:hover {

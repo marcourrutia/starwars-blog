@@ -14,7 +14,7 @@ export const Title = () => {
   return (
     <div className={`title-container ${visible ? "visible" : ""}`}>
       <img className="title-img" src={title} alt="star wars title" />
-      <div className="subtitle">BLOG BY devMARCO</div>
+      <div className="subtitle">GUIDE BY devMARCO</div>
     </div>
   );
 };

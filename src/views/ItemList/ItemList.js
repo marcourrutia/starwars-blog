@@ -24,7 +24,6 @@ export const ItemList = () => {
       setTotalPages(data.total_pages);
     }
   }, [loading, data]);
-  console.log(currentPage);
 
   return (
     <div className="chr-container">
