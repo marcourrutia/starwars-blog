@@ -7,6 +7,7 @@
   border: 1px solid var(--primary-color);
   opacity: 0.7;
   transition: 0.3s;
+  position: relative;
 }
 
 .chr-card-main-container:hover {
@@ -15,6 +16,10 @@
   cursor: pointer;
   box-shadow: 0 0 10px 3px var(--primary-color);
   border: none;
+}
+
+.chr-card-main-container:hover .chr-card-icon {
+  opacity: 0.8;
 }
 
 .chr-card-main-container:active {
@@ -27,12 +32,53 @@
   height: 100%;
 }
 
-.chr-card-span {
+.chr-card-footer {
   width: 100%;
   background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.chr-card-span {
+  background-color: white;
+  width: 100%;
   color: black;
   font-size: 1.1em;
   font-family: "biko";
   text-align: center;
   letter-spacing: 1px;
+  margin: 0 auto;
+}
+
+.chr-card-icon {
+  color: white;
+  filter: drop-shadow(0px 0px 4px black);
+  font-size: 4em;
+  position: absolute;
+  bottom: 20%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.chr-card-icon:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  cursor: pointer;
+  filter: drop-shadow(0px 0px 4px black);
+  color: var(--primary-color);
+}
+
+.favorite {
+  filter: drop-shadow(0px 0px 4px black);
+  color: var(--primary-color);
+  margin-right: 5px;
+  font-size: 3em;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.favorite:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
 }

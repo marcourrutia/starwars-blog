@@ -5,9 +5,9 @@ import { useFetch } from "../../services";
 import { BackBtn, ItemCard, Loading, Pagination } from "../../components";
 
 export const ItemList = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
   const { store, actions } = useContext(Context);
+  const { currentPage } = store;
+  const [totalPages, setTotalPages] = useState(0);
 
   const { data, loading } = useFetch(
     `https://www.swapi.tech/api/${store.url}?page=${currentPage}&limit=10`
@@ -25,6 +25,10 @@ export const ItemList = () => {
     }
   }, [loading, data]);
 
+  const handlePageChange = (page) => {
+    actions.setCurrentPage(page);
+  };
+
   return (
     <div className="chr-container">
       <div className="chr-container-header">
@@ -32,7 +36,7 @@ export const ItemList = () => {
         <Pagination
           totalPages={totalPages}
           currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
+          setCurrentPage={handlePageChange}
         />
       </div>
       <div className="chr-cards-container">

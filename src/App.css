@@ -4,6 +4,12 @@
   position: relative;
 }
 
+.app-main-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+}
+
 .nav-container {
   position: relative;
   width: 100%;

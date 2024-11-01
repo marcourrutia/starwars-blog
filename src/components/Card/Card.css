@@ -2,11 +2,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
   border-radius: 16px;
   border: 1px solid var(--primary-color);
   opacity: 0.5;
   transition: all 0.3s ease;
+  width: fit-content;
+  height: fit-content;
 }
 
 .card-container:hover {
@@ -53,7 +54,7 @@
   border-radius: 16px;
   object-fit: cover;
   margin: auto;
-  height: 100%;
+  width: 100%;
 }
 
 .card-img-png {

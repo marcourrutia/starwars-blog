@@ -11,10 +11,10 @@ export const Card = (props) => {
     <div
       className="card-container foreground"
       onClick={() => {
-        navigation("/item-list");
-        actions.setLoadMusic(props.loadMusic);
         actions.setUrl(props.url);
+        actions.setLoadMusic(props.loadMusic);
         actions.setItemImg(props.itemImg);
+        navigation("/item-list");
       }}
     >
       <img

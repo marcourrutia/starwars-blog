@@ -19,6 +19,7 @@ import {
   Title,
   CircleAnimation,
   StartWarning,
+  Footer,
 } from "./components";
 import injectContext from "./store/context";
 
@@ -66,14 +67,20 @@ function App() {
           />
         )}
         {!startPage && (
-          <>
+          <div className="app-main-container">
             <div className="nav-container">
               <BackgroundMusic />
               <Title />
               <FavButton />
             </div>
             <AppRouter />
-          </>
+            <Footer
+              lSOn={LightsaberOn}
+              lSOff={LightsaberOff}
+              lSActive={LightsaberActive}
+              lSHit={lightsaberHit}
+            />
+          </div>
         )}
       </div>
     </BrowserRouter>

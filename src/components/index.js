@@ -6,6 +6,7 @@ export { default as HyperSpace } from "./BackgroundStar/HyperSpace";
 export { Card } from "./Card/Card";
 export { ItemCard } from "./ItemCard/ItemCard";
 export { FavButton } from "./FavButton/FavButton";
+export { Footer } from "./Footer/Footer";
 export { Loading } from "./Loading/Loading";
 export { Pagination } from "./Pagination/Pagination";
 export { StartButton } from "./StartButton/StartButton";

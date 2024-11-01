@@ -17,7 +17,8 @@
 #offcanvasScrolling {
   background-color: black;
   color: white;
-  width: 300px;
+  width: 20%;
+  min-width: 300px;
 }
 
 .btn-close {
@@ -25,17 +26,61 @@
 }
 
 .offcanvas-title {
-  font-family: "jedi-outline";
-  font-size: 1.5em;
+  font-family: "jedi";
+  font-size: 1.6em;
+  color: var(--primary-color);
 }
 
 .fav-category-span {
   font-family: "jedi";
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
+  font-size: 1.2em;
 }
 
 .fav-list {
   margin: 0;
   list-style-type: none;
-  padding-left: 1em;
+  font-size: 1.2em;
+}
+
+.fav-list-item-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.fav-list-item:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  transform: scale(1.1);
+  color: var(--primary-color);
+}
+
+.fav-list-item:active {
+  transform: scale(1);
+}
+
+.fav-trash {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.fav-list-item-container:hover .fav-trash {
+  opacity: 1;
+}
+
+.fav-trash:hover {
+  transition: 0.3s;
+  transform: scale(1.2);
+  color: var(--primary-color);
+}
+
+.fav-trash:active {
+  transform: scale(1);
+}
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }

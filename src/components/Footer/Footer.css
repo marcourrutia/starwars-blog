@@ -1,0 +1,46 @@
+.main-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.main-footer div {
+  display: flex;
+  gap: 20px;
+  color: var(--primary-color);
+  align-items: flex-end;
+}
+
+.footer-icons {
+  font-size: 2.5em;
+}
+
+.footer-click {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-click:hover {
+  transform: scale(1.3);
+  animation: flicker2 0.2s infinite;
+  color: white;
+}
+
+@keyframes flicker2 {
+  0% {
+    filter: drop-shadow(0 0 0px #fff) drop-shadow(0 0 2px #ffe820)
+      drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 6px #ffd700)
+      drop-shadow(0 0 8px #ffd700);
+  }
+  50% {
+    filter: drop-shadow(0 0 0px #fff) drop-shadow(0 0 2px #ffe820)
+      drop-shadow(0 0 3px #ffd700) drop-shadow(0 0 5px #ffd700)
+      drop-shadow(0 0 7px #ffd700);
+  }
+  100% {
+    filter: drop-shadow(0 0 0px #fff) drop-shadow(0 0 2px #ffe820)
+      drop-shadow(0 0 4px #ffd700) drop-shadow(0 0 6px #ffd700)
+      drop-shadow(0 0 8px #ffd700);
+  }
+}
