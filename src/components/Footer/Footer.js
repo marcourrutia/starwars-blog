@@ -3,8 +3,11 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import useSound from "use-sound";
+import { useContext } from "react";
+import { Context } from "../../store/context";
 
 export const Footer = (props) => {
+  const { store } = useContext(Context);
   const [on] = useSound(props.lSOn);
   const [off] = useSound(props.lSOff);
   const [active, { stop }] = useSound(props.lSActive);
@@ -27,10 +30,12 @@ export const Footer = (props) => {
   }
 
   return (
-    <footer className="main-footer">
-      <div>
+    <footer
+      className={`main-footer ${store.homeVisible ? "footer-visible" : ""}`}
+    >
+      <div className="foreground">
         <span>Follow me...</span>
-        <div className="footer-icons foreground">
+        <div className="footer-icons">
           <FaLinkedin
             className="footer-click"
             onClick={() =>
