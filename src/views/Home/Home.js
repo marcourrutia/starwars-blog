@@ -31,25 +31,25 @@ export const Home = () => {
         cardSpan="characters"
         cardImg={characters}
         cardImgPng={darthVaderPng}
-        url="people"
+        url="characters"
         loadMusic={duelOfTheFates}
         itemImg="characters"
       />
       <Card
-        cardSpan="starships"
+        cardSpan="vehicles"
         cardImg={starships}
         cardImgPng={milenumFalcon}
-        url="starships"
+        url="vehicles"
         loadMusic={thePodRace}
-        itemImg="starships"
+        itemImg="vehicles"
       />
       <Card
-        cardSpan="planets"
+        cardSpan="locations"
         cardImg={planets}
         cardImgPng={tatooine}
-        url="planets"
+        url="locations"
         loadMusic={tatooineTheme}
-        itemImg="planets"
+        itemImg="locations"
       />
     </div>
   );

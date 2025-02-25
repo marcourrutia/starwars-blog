@@ -18,6 +18,7 @@ export function useFetch(url) {
       })
       .then((data) => {
         if (data) {
+          console.log("data: ", data)
           setData(data);
         }
       })

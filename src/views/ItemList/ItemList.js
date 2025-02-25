@@ -10,7 +10,7 @@ export const ItemList = () => {
   const [totalPages, setTotalPages] = useState(0);
 
   const { data, loading } = useFetch(
-    `https://www.swapi.tech/api/${store.url}?page=${currentPage}&limit=10`
+    `https://starwars-databank-server.vercel.app/api/v1/${store.url}?page=${currentPage}&limit=20`
   );
 
   useEffect(() => {
@@ -21,7 +21,8 @@ export const ItemList = () => {
 
   useEffect(() => {
     if (!loading && data) {
-      setTotalPages(data.total_pages);
+      const roundedPages = Math.ceil(data.info.total / 20);
+      setTotalPages(roundedPages);
     }
   }, [loading, data]);
 
@@ -43,12 +44,12 @@ export const ItemList = () => {
         {loading ? (
           <Loading />
         ) : (
-          data?.results.map((item, index) => (
+          data?.data.map((item, index) => (
             <ItemCard
               key={index}
-              chrCardImg={`https://starwars-visualguide.com/assets/img/${store.itemImg}/${item.uid}.jpg`}
+              chrCardImg={item.image}
               chrCardSpan={item.name}
-              chrId={item.uid}
+              chrId={item._id}
             />
           ))
         )}

@@ -8,11 +8,11 @@ export const FavButton = () => {
   const { store, actions } = useContext(Context);
   const navigate = useNavigate();
 
-  const characters = store.favorites.filter((fav) => fav.category === "people");
+  const characters = store.favorites.filter((fav) => fav.category === "characters");
   const starships = store.favorites.filter(
-    (fav) => fav.category === "starships"
+    (fav) => fav.category === "vehicles"
   );
-  const planets = store.favorites.filter((fav) => fav.category === "planets");
+  const planets = store.favorites.filter((fav) => fav.category === "locations");
 
   const handleItemClick = (uid, url, itemImg) => {
     actions.setUrl(url);
@@ -71,14 +71,14 @@ export const FavButton = () => {
                       key={fav.uid}
                       className="fav-list-item"
                       onClick={() =>
-                        handleItemClick(fav.uid, "people", "characters")
+                        handleItemClick(fav.uid, "characters", "characters")
                       }
                     >
                       {fav.name}
                     </li>
                     <GoTrash
                       className="fav-trash"
-                      onClick={() => handleFavoriteClick(fav.uid, "people")}
+                      onClick={() => handleFavoriteClick(fav.uid, "characters")}
                     />
                   </div>
                 ))
@@ -88,7 +88,7 @@ export const FavButton = () => {
             </ul>
           </div>
           <div className="fav-vehicles">
-            <span className="fav-category-span">Starships</span>
+            <span className="fav-category-span">vehicles</span>
             <ul className="fav-list">
               {starships.length > 0 ? (
                 starships.map((fav) => (
@@ -97,24 +97,24 @@ export const FavButton = () => {
                       key={fav.uid}
                       className="fav-list-item"
                       onClick={() =>
-                        handleItemClick(fav.uid, "starships", "starships")
+                        handleItemClick(fav.uid, "vehicles", "vehicles")
                       }
                     >
                       {fav.name}
                     </li>
                     <GoTrash
                       className="fav-trash"
-                      onClick={() => handleFavoriteClick(fav.uid, "starships")}
+                      onClick={() => handleFavoriteClick(fav.uid, "vehicles")}
                     />
                   </div>
                 ))
               ) : (
-                <p>No starships added</p>
+                <p>No vehicles added</p>
               )}
             </ul>
           </div>
           <div className="fav-planets">
-            <span className="fav-category-span">Planets</span>
+            <span className="fav-category-span">locations</span>
             <ul className="fav-list">
               {planets.length > 0 ? (
                 planets.map((fav) => (
@@ -123,19 +123,19 @@ export const FavButton = () => {
                       key={fav.uid}
                       className="fav-list-item"
                       onClick={() =>
-                        handleItemClick(fav.uid, "planets", "planets")
+                        handleItemClick(fav.uid, "locations", "locations")
                       }
                     >
                       {fav.name}
                     </li>
                     <GoTrash
                       className="fav-trash"
-                      onClick={() => handleFavoriteClick(fav.uid, "planets")}
+                      onClick={() => handleFavoriteClick(fav.uid, "locations")}
                     />
                   </div>
                 ))
               ) : (
-                <p>No planets added</p>
+                <p>No locations added</p>
               )}
             </ul>
           </div>

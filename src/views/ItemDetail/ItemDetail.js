@@ -9,12 +9,11 @@ import imgNotFound from "../../assets/images/img-not-found.webp";
 export const ItemDetail = () => {
   const { id } = useParams();
   const { store, actions } = useContext(Context);
-  const [itemData, setItemData] = useState(null);
   const { data, loading } = useFetch(
-    `https://www.swapi.tech/api/${store.url}/${id}`
+    `https://starwars-databank-server.vercel.app/api/v1/${store.url}/${id}`
   );
 
-  useEffect(() => {
+  /* useEffect(() => {
     const fetchAdditionalData = async (url) => {
       const response = await fetch(url);
       const additionalData = await response.json();
@@ -62,7 +61,7 @@ export const ItemDetail = () => {
     if (key === "pilots") {
     } else if (key === "homeworld") {
     }
-  };
+  }; */
 
   return (
     <div className="item-details-container">
@@ -71,52 +70,10 @@ export const ItemDetail = () => {
         <Loading />
       ) : (
         <div className="item-details-info">
-          <img
-            src={`https://starwars-visualguide.com/assets/img/${store.itemImg}/${data?.result.uid}.jpg`}
-            onError={(e) => (e.target.src = imgNotFound)}
-          />
+          <img src={data?.image} />
           <div className="foreground">
-            <h1>{data?.result.properties.name}</h1>
-            <ul>
-              {itemData &&
-                Object.entries(itemData).map(([key, value]) => (
-                  <li key={key}>
-                    {key === "pilots" || key === "homeworld" ? (
-                      <>
-                        <strong>{key.replace(/_/g, " ")}:</strong>{" "}
-                        {Array.isArray(value) ? (
-                          <ul>
-                            {value.map(({ name, uid }, index) => (
-                              <li
-                                key={index}
-                                onClick={() => handleClick(key, name, uid)}
-                                className="clickeable"
-                              >
-                                {name}
-                              </li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <ul>
-                            <li
-                              onClick={() =>
-                                handleClick(key, value.name, value.uid)
-                              }
-                              className="clickeable"
-                            >
-                              {value.name}
-                            </li>
-                          </ul>
-                        )}
-                      </>
-                    ) : (
-                      <>
-                        <strong>{key.replace(/_/g, " ")}:</strong> {value}
-                      </>
-                    )}
-                  </li>
-                ))}
-            </ul>
+            <h1>{data?.name}</h1>
+            <p>{data?.description}</p>
           </div>
         </div>
       )}

@@ -1,5 +1,5 @@
 .item-details-container {
-  width: 100%;
+  max-width: 100%;
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
@@ -11,13 +11,13 @@
   gap: 30px;
   padding: 10px 30px;
   justify-content: center;
-  align-items: start;
-  width: 70%;
+  align-items: center;
+  max-width: 70%;
   align-self: center;
 }
 
 .item-details-info img {
-  max-height: 400px;
+  max-width: 50%;
   object-fit: cover;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
@@ -27,7 +27,12 @@
   display: flex;
   flex-direction: column;
   overflow-wrap: anywhere;
-  text-wrap: nowrap;
+}
+
+.item-details-info p {
+  font-family: "biko";
+  color: whitesmoke;
+  font-size: 1.2em;
 }
 
 .item-details-info h1 {
